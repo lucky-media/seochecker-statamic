@@ -1,0 +1,21 @@
+{
+    "name": "seopulse-statamic",
+    "version": "1.0.0",
+    "description": "> Seopulse Statamic is a Statamic addon that does something pretty neat.",
+    "main": "vite.config.js",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@vitejs/plugin-vue2": "^2.2.0",
+        "laravel-vite-plugin": "^0.8.1",
+        "vite": "^4.4.11"
+    },
+    "dependencies": {
+        "vue": "^2.7.14"
+    }
+}
