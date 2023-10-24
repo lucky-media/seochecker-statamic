@@ -1,0 +1,50 @@
+<template>
+    <card>
+        <card-header>{{ unslugify }}</card-header>
+        <card-body>
+            <div class="flex items-center">
+                <div class="sp-w-3 sp-h-3 sp-rounded-full sp-shrink-0 sp-bg-green-500 sp-mr-2" :class="{
+                'sp-bg-green-500': score === 'passed',
+                'sp-bg-yellow-500': score === 'warning',
+                'sp-bg-red-500': score === 'failed',
+                }" />
+
+                <h1 class="sp-font-semibold sp-text-3xl" v-text="value" :class="{
+                'sp-text-green-500': score === 'passed',
+                'sp-text-yellow-500': score === 'warning',
+                'sp-text-red-500': score === 'failed',
+            }" />
+            </div>
+
+            <p v-text="description" class="sp-text-sm sp-mt-2" />
+        </card-body>
+    </card>
+</template>
+
+<script>
+import Card from "./card/Card.vue";
+import CardBody from "./card/CardBody.vue";
+import CardHeader from "./card/CardHeader.vue";
+
+export default {
+    components: {
+        CardHeader,
+        CardBody,
+        Card
+    },
+    props: [
+        'title',
+        'score',
+        'description',
+        'value'
+    ],
+    computed: {
+        unslugify() {
+            return this.title.replace(/\_/g, " ")
+                .replace(/\w\S*/g,
+                    (text) => text.charAt(0).toUpperCase() + text.slice(1).toLowerCase()
+                );
+        }
+    }
+}
+</script>

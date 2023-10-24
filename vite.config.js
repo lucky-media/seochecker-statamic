@@ -6,7 +6,10 @@ export default defineConfig({
     plugins: [
         laravel({
             publicDirectory: 'resources/dist',
-            input: ['resources/js/cp.js'],
+            input: [
+                'resources/js/sp-pulse.js',
+                'resources/css/sp-pulse.css',
+            ],
         }),
         vue2(),
     ],

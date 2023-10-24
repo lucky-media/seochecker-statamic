@@ -45,7 +45,7 @@ class ReportController extends CpController
         $report = $report->toArray();
 
         return view('seopulse::cp.show', [
-            'report' => $report,
+            'data' => $report,
         ]);
     }
 
