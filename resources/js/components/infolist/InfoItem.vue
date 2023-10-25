@@ -1,6 +1,6 @@
 <template>
     <div class="form-group publish-field publish-field__display field_display-fieldtype config-field">
-        <div class="field-inner flex flex-row items-center">
+        <div class="flex flex-row items-center field-inner">
             <status :value="score" />
             <div class="flex flex-col ml-2">
                 <label for="field_display" class="publish-field-label">
@@ -8,7 +8,7 @@
                         {{ title }}
                     </span>
                 </label>
-                <div v-if="description" class="help-block mt-1">
+                <div v-if="description" class="mt-1 help-block">
                     <p>{{ description }}</p>
                 </div>
             </div>
