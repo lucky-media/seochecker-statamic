@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import Card from '../../card/Card.vue';
-import CardHeader from '../../card/CardHeader.vue';
-import InfoItem from '../../infolist/InfoItem.vue';
-import unslugify from '../../../services/unslugify';
+import Card from '@/components/card/Card.vue';
+import CardHeader from '@/components/card/CardHeader.vue';
+import InfoItem from '@/components/infolist/InfoItem.vue';
+import unslugify from '@/services/unslugify';
 
 export default {
   components: { Card, CardHeader, InfoItem },
