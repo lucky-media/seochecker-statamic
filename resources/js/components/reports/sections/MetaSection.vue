@@ -19,19 +19,13 @@
 import Card from '../../card/Card.vue';
 import CardHeader from '../../card/CardHeader.vue';
 import InfoItem from '../../infolist/InfoItem.vue';
+import unslugify from '../../../services/unslugify';
 
 export default {
   components: { Card, CardHeader, InfoItem },
   props: ['audit'],
   methods: {
-    unslugify(title) {
-      return title
-        .replace(/\_/g, ' ')
-        .replace(
-          /\w\S*/g,
-          (text) => text.charAt(0).toUpperCase() + text.slice(1).toLowerCase()
-        );
-    },
+    unslugify,
   },
 };
 </script>
