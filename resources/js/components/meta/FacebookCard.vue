@@ -3,7 +3,7 @@
     <h3 class="mb-2">Facebook</h3>
     <a
       :href="url"
-      target="_blanket"
+      target="_blank"
       class="inline-block sp-border-[1px] sp-w-[500px]"
     >
       <div class="sp-h-[274px] sp-relative sp-bg-white sp-font-sm">
@@ -24,8 +24,11 @@
         >
           {{ url }}
         </p>
-        <h4 class="pt-1 pb-2 text-base">{{ site_name }}</h4>
-        <p class="text-sm text-gray-100 sp-line-clamp-1 sp-text-gray-500">
+        <h4 v-if="site_name" class="pt-1 pb-2 text-base">{{ site_name }}</h4>
+        <p
+          v-if="desc"
+          class="text-sm text-gray-100 sp-line-clamp-1 sp-text-gray-500"
+        >
           {{ desc }}
         </p>
       </div>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="mb-2">Linkedin</h3>
-    <a :href="url" target="_blanket" class="inline-block sp-w-[500px] shadow">
+    <a :href="url" target="_blank" class="inline-block sp-w-[500px] shadow">
       <div class="sp-h-[274px] sp-relative sp-bg-white sp-font-sm">
         <div
           v-if="image"
@@ -15,7 +15,7 @@
         />
       </div>
       <div class="p-3 bg-white">
-        <h4 class="mb-2 text-base">{{ site_name }}</h4>
+        <h4 v-if="site_name" class="mb-2 text-base">{{ site_name }}</h4>
         <p
           class="sp-truncate sp-whitespace-nowrap sp-text-xs sp-uppercase sp-leading-[11px] sp-text-gray-600"
         >

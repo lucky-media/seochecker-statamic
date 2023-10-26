@@ -1,8 +1,9 @@
 <template>
   <div>
+    <h3 class="mb-2">Twitter</h3>
     <a
       :href="url"
-      target="_blanket"
+      target="_blank"
       class="inline-block sp-relative sp-overflow-hidden sp-rounded-md"
     >
       <div class="sp-w-[438px] sp-h-[260px] sp-relative sp-bg-white sp-font-sm">
@@ -17,9 +18,10 @@
           class="sp-bg-gray-300 sp-w-full sp-object-contain sp-h-full"
         />
         <p
+          v-if="url"
           class="px-3 py-1 text-xs text-gray-800 sp-rounded-md sp-shadow-sm sp-absolute sp-left-2 sp-bottom-2 sp-bg-white/80"
         >
-          {{ url || 'www.google.com' }}
+          {{ url }}
         </p>
       </div>
     </a>
