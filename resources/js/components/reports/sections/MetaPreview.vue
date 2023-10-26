@@ -31,5 +31,8 @@ export default {
     DiscordCard,
   },
   props: ['og_graph', 'twitter'],
+  mounted() {
+    console.log(this.twitter)
+  }
 };
 </script>
