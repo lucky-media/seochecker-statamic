@@ -1,7 +1,7 @@
 <template>
     <div>
         <a :href="url" target="_blanket" class="inline-block sp-relative sp-overflow-hidden sp-rounded-md">
-            <div class="sp-w-[500px] sp-h-[260px] sp-relative sp-bg-white sp-font-sm">
+            <div class="sp-w-[438px] sp-h-[260px] sp-relative sp-bg-white sp-font-sm">
                 <div v-if="card === 'summary_large_image'" :style="{ backgroundImage: `url(${image})` }"
                     class="sp-w-full sp-h-full"></div>
                 <img v-if="card !== 'summary_large_image'" src="@/assets/no-image.png"
