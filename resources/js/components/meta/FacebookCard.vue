@@ -9,7 +9,7 @@
       <div class="sp-h-[274px] sp-relative">
         <img
           v-if="image"
-          class="sp-w-full sp-h-full sp-object-obtain"
+          class="sp-w-full sp-h-full sp-object-contain"
           :src="image"
         />
         <img

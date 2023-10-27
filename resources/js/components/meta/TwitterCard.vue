@@ -10,12 +10,12 @@
         <img
           v-if="card === 'summary_large_image'"
           :src="image"
-          class="sp-w-full sp-object-obtain sp-h-full"
+          class="sp-w-full sp-object-contain sp-h-full"
         />
         <img
           v-if="card !== 'summary_large_image'"
           src="@/assets/no-image.png"
-          class="sp-w-full sp-object-obtain sp-h-full"
+          class="sp-w-full sp-object-contain sp-h-full"
         />
         <p
           v-if="url"

@@ -6,12 +6,12 @@
         <img
           v-if="image"
           :src="image"
-          class="sp-h-full sp-bg-gray-50 sp-w-full sp-object-obtain"
+          class="sp-h-full sp-bg-gray-50 sp-w-full sp-object-contain"
         />
         <img
           v-if="!image"
           src="@/assets/no-image.png"
-          class="sp-h-full sp-bg-gray-50 sp-w-full sp-object-obtain"
+          class="sp-h-full sp-bg-gray-50 sp-w-full sp-object-contain"
         />
       </div>
       <div class="p-3 bg-white">
