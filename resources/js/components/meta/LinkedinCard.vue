@@ -2,22 +2,22 @@
   <div>
     <h3 class="mb-2">Linkedin</h3>
     <a :href="url" target="_blank" class="inline-block sp-w-[500px] shadow">
-      <div class="sp-h-[274px] sp-relative sp-bg-white sp-font-sm">
-        <div
+      <div class="sp-h-[274px] sp-relative sp-bg-white">
+        <img
           v-if="image"
-          :style="{ backgroundImage: `url(${image})` }"
-          class="sp-w-full sp-h-full"
-        ></div>
+          :src="image"
+          class="sp-h-full sp-bg-gray-50 sp-w-full sp-object-obtain"
+        />
         <img
           v-if="!image"
           src="@/assets/no-image.png"
-          class="sp-h-full sp-bg-gray-50 sp-w-full sp-object-contain"
+          class="sp-h-full sp-bg-gray-50 sp-w-full sp-object-obtain"
         />
       </div>
       <div class="p-3 bg-white">
         <h4 v-if="site_name" class="mb-2 text-base">{{ site_name }}</h4>
         <p
-          class="sp-truncate sp-whitespace-nowrap sp-text-xs sp-uppercase sp-leading-[11px] sp-text-gray-600"
+          class="sp-truncate sp-whitespace-nowrap sp-text-xs sp-uppercase sp-text-gray-600"
         >
           {{ url }}
         </p>
