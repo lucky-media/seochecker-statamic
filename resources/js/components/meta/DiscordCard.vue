@@ -21,7 +21,7 @@
       <img
         v-if="image"
         :src="image"
-        class="sp-h-[200px] mt-4 sp-relative sp-font-sm sp-rounded sp-overflow-hidden sp-object-contain"
+        class="sp-h-[200px] sp-w-full mt-4 sp-relative sp-font-sm sp-rounded sp-object-cover"
       />
     </a>
   </div>

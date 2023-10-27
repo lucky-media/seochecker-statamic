@@ -10,7 +10,7 @@
         <img
           v-if="card === 'summary_large_image'"
           :src="image"
-          class="sp-w-full sp-object-contain sp-h-full"
+          class="h-full sp-object-cover sp-object-center sp-w-full"
         />
         <img
           v-if="card !== 'summary_large_image'"

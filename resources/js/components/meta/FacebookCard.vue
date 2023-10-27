@@ -6,12 +6,8 @@
       target="_blank"
       class="inline-block sp-border-[1px] sp-w-[500px]"
     >
-      <div class="sp-h-[274px] sp-relative">
-        <img
-          v-if="image"
-          class="sp-w-full sp-h-full sp-object-contain"
-          :src="image"
-        />
+      <div class="w-auto sp-h-full sp-relative">
+        <img v-if="image" class="sp-object-contain" :src="image" />
         <img
           v-if="!image"
           src="@/assets/no-image.png"

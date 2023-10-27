@@ -2,16 +2,12 @@
   <div>
     <h3 class="mb-2">Linkedin</h3>
     <a :href="url" target="_blank" class="inline-block sp-w-[500px] shadow">
-      <div class="sp-h-[274px] sp-relative sp-bg-white">
-        <img
-          v-if="image"
-          :src="image"
-          class="sp-h-full sp-bg-gray-50 sp-w-full sp-object-contain"
-        />
+      <div class="sp-w-auto sp-h-full sp-relative">
+        <img v-if="image" :src="image" class="sp-object-contain" />
         <img
           v-if="!image"
           src="@/assets/no-image.png"
-          class="sp-h-full sp-bg-gray-50 sp-w-full sp-object-contain"
+          class="sp-h-full sp-w-full sp-object-contain"
         />
       </div>
       <div class="p-3 bg-white">
