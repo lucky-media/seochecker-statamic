@@ -4,7 +4,12 @@
     <audit-section :audit="report.lighthouse.audit" />
     <seo-section :seo="report.seo" />
     <meta-section :audit="report.og_graph.audit" />
-    <meta-preview :og_graph="report.og_graph" :twitter="report.twitter" />
+    <meta-preview
+      :og_graph="report.og_graph"
+      :twitter="report.twitter"
+      :json_ld="report.json_ld"
+    />
+    <json-ld-section :json_ld="report.json_ld" />
   </div>
 </template>
 
@@ -14,6 +19,7 @@ import PerformanceSection from './sections/PerformanceSection.vue';
 import AuditSection from './sections/AuditSection.vue';
 import MetaPreview from './sections/MetaPreview.vue';
 import MetaSection from './sections/MetaSection.vue';
+import JsonLdSection from './sections/JsonLdSection.vue';
 
 export default {
   components: {
@@ -22,6 +28,7 @@ export default {
     SeoSection,
     MetaPreview,
     MetaSection,
+    JsonLdSection,
   },
   props: ['report'],
 };
