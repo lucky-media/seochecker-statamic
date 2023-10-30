@@ -6,16 +6,12 @@
       target="_blank"
       class="inline-block sp-border-[1px] sp-w-[500px]"
     >
-      <div class="sp-h-[274px] sp-relative sp-bg-white sp-font-sm">
-        <div
-          v-if="image"
-          :style="{ backgroundImage: `url(${image})` }"
-          class="sp-w-full sp-h-full"
-        ></div>
+      <div class="w-auto sp-h-full sp-relative">
+        <img v-if="image" class="sp-object-contain" :src="image" />
         <img
           v-if="!image"
           src="@/assets/no-image.png"
-          class="sp-h-full sp-bg-gray-50 sp-w-full sp-object-contain"
+          class="sp-h-full sp-w-full sp-object-contain"
         />
       </div>
       <div class="p-3 bg-gray-300">

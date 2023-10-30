@@ -18,15 +18,11 @@
       >
         {{ desc }}
       </p>
-      <div
+      <img
         v-if="image"
-        class="sp-h-[200px] mt-4 sp-relative sp-bg-white sp-font-sm sp-rounded sp-overflow-hidden"
-      >
-        <div
-          :style="{ backgroundImage: `url(${image})` }"
-          class="sp-w-full sp-h-full"
-        ></div>
-      </div>
+        :src="image"
+        class="sp-h-[200px] sp-w-full mt-4 sp-relative sp-font-sm sp-rounded sp-object-cover"
+      />
     </a>
   </div>
 </template>
