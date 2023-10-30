@@ -5,25 +5,25 @@
       <table
         v-for="(value, key) in this.json_ld"
         :key="key"
-        class="sp-w-full sp-border sp-rounded sp-divide-y"
+        class="sp-overflow-hidden sp-rounded-lg sp-ring-1 sp-ring-gray-300 sp-divide-y sp-w-full"
       >
         <tr v-for="(value, key) in value" :key="key">
-          <td class="w-1/3 px-4 py-2">
+          <td class="w-1/4 px-4 py-2 sp-bg-gray-50">
             <b>
               {{ unslugify(key) }}
             </b>
           </td>
-          <td class="w-2/3 px-4 py-1">
+          <td class="w-3/4 px-4 py-1">
             <template v-if="isString(value)"> {{ value }}</template>
             <template v-if="isObject(value)">
               <div v-for="(value, key) in value" :key="key">
-                <span class="sp-font-medium" v-if="isString(key)"
+                <span class="sp-font-medium sp-pr-2" v-if="isString(key)"
                   >{{ key }}:</span
                 >
                 <template v-if="isString(value)">{{ value }}</template>
                 <template v-if="isObject(value)">
                   <div v-for="(value, key) in value" :key="key">
-                    <span class="sp-font-medium" v-if="isString(key)"
+                    <span class="sp-font-medium sp-pr-2" v-if="isString(key)"
                       >{{ key }}:
                     </span>
                     <template v-if="isString(value)">
