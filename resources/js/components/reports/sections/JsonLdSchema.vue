@@ -52,9 +52,6 @@ export default {
     CardHeader,
     CardBody,
   },
-  mounted() {
-    console.log(this.json_ld);
-  },
   methods: {
     unslugify,
     isObject(value) {
