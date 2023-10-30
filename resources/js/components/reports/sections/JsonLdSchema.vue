@@ -5,26 +5,30 @@
       <div class="sp-grid sp-grid-cols-2">
         <div v-for="(value, key) in this.json_ld" :key="key">
           <div v-for="(value, key) in value" :key="key">
-            <p class="font-medium">{{ key }}:</p>
-            <p v-if="isString(value)" class="pl-4">{{ value }}</p>
+            <div class="flex space-x-3">
+              <b>{{ unslugify(key) }}:</b>
+              <p v-if="isString(value)">{{ value }}</p>
+            </div>
             <template v-if="isObject(value)">
               <div v-for="(value, key) in value" :key="key" class="pl-4">
                 <!-- Need to check also key, because some keys are numbers -->
-                <p v-if="isString(key)" class="font-medium">{{ key }}:</p>
-                <p v-if="isString(value)">{{ value }}</p>
+                <div class="flex space-x-3">
+                  <b v-if="isString(key)">{{ unslugify(key) }}:</b>
+                  <p v-if="isString(value)">{{ value }}</p>
+                </div>
                 <template v-if="isObject(value)">
                   <div v-for="(value, key) in value" :key="key" class="pl-4">
-                    <p v-if="isString(key)" class="font-medium">{{ key }}:</p>
-                    <p v-if="isString(value)">{{ value }}</p>
+                    <div class="flex space-x-3">
+                      <b v-if="isString(key)">{{ unslugify(key) }}:</b>
+                      <p v-if="isString(value)">{{ value }}</p>
+                    </div>
                     <template v-if="isObject(value)">
                       <div
                         v-for="(value, key) in value"
                         :key="key"
                         class="pl-4"
                       >
-                        <p v-if="isString(key)" class="font-medium">
-                          {{ key }}:
-                        </p>
+                        <b v-if="isString(key)"> {{ unslugify(key) }}: </b>
                         <p v-if="isString(value)">{{ value }}</p>
                       </div>
                     </template>
