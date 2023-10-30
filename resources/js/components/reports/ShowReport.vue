@@ -9,7 +9,9 @@
       :twitter="report.twitter"
       :json_ld="report.json_ld"
     />
-    <json-ld-schema :json_ld="report.json_ld" />
+    <template v-if="report.json_ld.length != 0">
+      <json-ld-schema :json_ld="report.json_ld" />
+    </template>
   </div>
 </template>
 
