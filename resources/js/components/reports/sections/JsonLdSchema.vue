@@ -1,44 +1,46 @@
 <template>
   <card class="mt-4">
     <card-header> JSON-LD Schema </card-header>
-    <card-body>
-      <div class="sp-grid sp-grid-cols-2">
-        <div v-for="(value, key) in this.json_ld" :key="key">
-          <div v-for="(value, key) in value" :key="key">
-            <div class="flex space-x-3">
-              <b>{{ unslugify(key) }}:</b>
-              <p v-if="isString(value)">{{ value }}</p>
-            </div>
+    <card-body class="sp-space-y-4">
+      <table
+        v-for="(value, key) in this.json_ld"
+        :key="key"
+        class="sp-w-full sp-border sp-rounded sp-divide-y"
+      >
+        <tr v-for="(value, key) in value" :key="key">
+          <td class="w-1/3 px-4 py-2">
+            <b>
+              {{ unslugify(key) }}
+            </b>
+          </td>
+          <td class="w-2/3 px-4 py-1">
+            <template v-if="isString(value)"> {{ value }}</template>
             <template v-if="isObject(value)">
-              <div v-for="(value, key) in value" :key="key" class="pl-4">
-                <!-- Need to check also key, because some keys are numbers -->
-                <div class="flex space-x-3">
-                  <b v-if="isString(key)">{{ unslugify(key) }}:</b>
-                  <p v-if="isString(value)">{{ value }}</p>
-                </div>
+              <div v-for="(value, key) in value" :key="key">
+                <span class="sp-font-medium" v-if="isString(key)"
+                  >{{ key }}:</span
+                >
+                <template v-if="isString(value)">{{ value }}</template>
                 <template v-if="isObject(value)">
-                  <div v-for="(value, key) in value" :key="key" class="pl-4">
-                    <div class="flex space-x-3">
-                      <b v-if="isString(key)">{{ unslugify(key) }}:</b>
-                      <p v-if="isString(value)">{{ value }}</p>
-                    </div>
+                  <div v-for="(value, key) in value" :key="key">
+                    <span class="sp-font-medium" v-if="isString(key)"
+                      >{{ key }}:
+                    </span>
+                    <template v-if="isString(value)">
+                      {{ value }}
+                    </template>
                     <template v-if="isObject(value)">
-                      <div
-                        v-for="(value, key) in value"
-                        :key="key"
-                        class="pl-4"
-                      >
-                        <b v-if="isString(key)"> {{ unslugify(key) }}: </b>
-                        <p v-if="isString(value)">{{ value }}</p>
-                      </div>
+                      <span v-for="(value, key) in value" :key="key">
+                        {{ value }}
+                      </span>
                     </template>
                   </div>
                 </template>
               </div>
             </template>
-          </div>
-        </div>
-      </div>
+          </td>
+        </tr>
+      </table>
     </card-body>
   </card>
 </template>
@@ -55,6 +57,9 @@ export default {
     Card,
     CardHeader,
     CardBody,
+  },
+  mounted() {
+    console.log(this.json_ld);
   },
   methods: {
     unslugify,
