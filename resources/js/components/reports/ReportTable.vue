@@ -9,8 +9,7 @@
         <svg-icon name="telescope" class="w-12 h-12 text-gray-700" />
       </div>
       <p class="text-center text-gray-800 sp-font-light">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+        No reports found. Start by creating one.
       </p>
       <div>
         <a class="btn-primary" :href="cp_url('/seopulse/create')">
