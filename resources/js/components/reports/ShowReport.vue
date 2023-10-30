@@ -9,7 +9,7 @@
       :twitter="report.twitter"
       :json_ld="report.json_ld"
     />
-    <json-ld-section :json_ld="report.json_ld" />
+    <json-ld-schema :json_ld="report.json_ld" />
   </div>
 </template>
 
@@ -19,7 +19,7 @@ import PerformanceSection from './sections/PerformanceSection.vue';
 import AuditSection from './sections/AuditSection.vue';
 import MetaPreview from './sections/MetaPreview.vue';
 import MetaSection from './sections/MetaSection.vue';
-import JsonLdSection from './sections/JsonLdSection.vue';
+import JsonLdSchema from './sections/JsonLdSchema.vue';
 
 export default {
   components: {
@@ -28,7 +28,7 @@ export default {
     SeoSection,
     MetaPreview,
     MetaSection,
-    JsonLdSection,
+    JsonLdSchema,
   },
   props: ['report'],
 };
