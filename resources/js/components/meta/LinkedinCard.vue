@@ -11,7 +11,7 @@
         />
       </div>
       <div class="p-3 bg-white">
-        <h4 v-if="site_name" class="mb-2 text-base">{{ site_name }}</h4>
+        <h4 v-if="site_name" class="mb-2 sp-text-base">{{ site_name }}</h4>
         <p
           class="sp-truncate sp-whitespace-nowrap sp-text-xs sp-uppercase sp-text-gray-600"
         >
