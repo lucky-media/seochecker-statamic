@@ -8,6 +8,7 @@
       :og_graph="report.og_graph"
       :twitter="report.twitter"
       :json_ld="report.json_ld"
+      :domain="this.domain"
     />
     <template v-if="report.json_ld.length != 0">
       <json-ld-schema :json_ld="report.json_ld" />
@@ -32,6 +33,6 @@ export default {
     MetaSection,
     JsonLdSchema,
   },
-  props: ['report'],
+  props: ['report', 'domain'],
 };
 </script>

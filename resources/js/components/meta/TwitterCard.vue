@@ -19,7 +19,7 @@
         />
         <p
           v-if="url"
-          class="px-3 py-1 text-xs text-gray-800 sp-rounded-md sp-shadow sp-absolute sp-left-2 sp-bottom-2 sp-bg-white/95"
+          class="px-3 py-1 text-gray-800 sp-text-xs sp-rounded-md sp-shadow sp-absolute sp-left-2 sp-bottom-2 sp-bg-white/95"
         >
           {{ url }}
         </p>

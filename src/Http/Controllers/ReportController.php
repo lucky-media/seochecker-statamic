@@ -28,7 +28,6 @@ class ReportController extends CpController
                 ];
             })
             ->toArray();
-
         return view('seopulse::cp.index', [
             'reports' => $reports,
         ]);
@@ -46,6 +45,7 @@ class ReportController extends CpController
 
         return view('seopulse::cp.show', [
             'data' => $report,
+            'domain' => $report['domain']
         ]);
     }
 

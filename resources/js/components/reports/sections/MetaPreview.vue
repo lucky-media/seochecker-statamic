@@ -10,8 +10,8 @@
 
     <!-- Twitter -->
     <twitter-card
+      :url="this.domain"
       :image="twitter.image"
-      :url="twitter.url"
       :card="twitter.card"
     />
 
@@ -45,6 +45,6 @@ export default {
     LinkedinCard,
     DiscordCard,
   },
-  props: ['og_graph', 'twitter'],
+  props: ['og_graph', 'twitter', 'domain'],
 };
 </script>
