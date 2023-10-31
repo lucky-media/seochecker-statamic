@@ -14,7 +14,7 @@
       </h3>
       <p
         v-if="desc"
-        class="text-sm sp-text-gray-200 sp-font-light sp-line-clamp-2"
+        class="sp-text-sm sp-text-gray-200 sp-font-light sp-line-clamp-2"
       >
         {{ desc }}
       </p>

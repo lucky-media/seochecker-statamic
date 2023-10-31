@@ -6,5 +6,9 @@
         <h1 class="flex-1">Report for: {{ $data['domain'] }}</h1>
     </div>
 
-    <sp-show-report :report="{{ Illuminate\Support\Js::from($data['report']) }}" />
+    <sp-show-report 
+            :report="{{ Illuminate\Support\Js::from($data['report']) }}"
+            :domain="{{  Illuminate\Support\Js::from($domain) }}"
+    />
+    
 @endsection

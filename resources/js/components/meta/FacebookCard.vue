@@ -20,10 +20,10 @@
         >
           {{ url }}
         </p>
-        <h4 v-if="site_name" class="pt-1 pb-2 text-base">{{ site_name }}</h4>
+        <h4 v-if="site_name" class="pt-1 pb-2 sp-text-base">{{ site_name }}</h4>
         <p
           v-if="desc"
-          class="text-sm text-gray-100 sp-line-clamp-1 sp-text-gray-500"
+          class="text-gray-100 sp-text-sm sp-line-clamp-1 sp-text-gray-500"
         >
           {{ desc }}
         </p>
