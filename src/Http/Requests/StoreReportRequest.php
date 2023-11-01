@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
-class DomainReportRequest extends FormRequest
+class StoreReportRequest extends FormRequest
 {
     public function rules()
     {

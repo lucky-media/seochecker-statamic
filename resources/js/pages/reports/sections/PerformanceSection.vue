@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Gauge from "../../Gauge.vue";
+import Gauge from "../../../components/Gauge.vue";
 export default {
     components: {Gauge},
     props: ['scores']

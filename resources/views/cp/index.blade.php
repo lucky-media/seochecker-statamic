@@ -6,8 +6,6 @@
         <h1 class="flex-1">SEOPulse</h1>
     </div>
     <div>
-        <sp-table
-            :reports="{{ Illuminate\Support\Js::from($reports) }}"
-        />
+        <sp-index />
     </div>
 @stop

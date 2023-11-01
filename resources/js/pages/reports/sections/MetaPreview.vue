@@ -33,10 +33,10 @@
 </template>
 
 <script>
-import FacebookCard from '../../meta/FacebookCard.vue';
-import TwitterCard from '../../meta/TwitterCard.vue';
-import LinkedinCard from '../../meta/LinkedinCard.vue';
-import DiscordCard from '../../meta/DiscordCard.vue';
+import FacebookCard from '../../../components/meta/FacebookCard.vue';
+import TwitterCard from '../../../components/meta/TwitterCard.vue';
+import LinkedinCard from '../../../components/meta/LinkedinCard.vue';
+import DiscordCard from '../../../components/meta/DiscordCard.vue';
 
 export default {
   components: {

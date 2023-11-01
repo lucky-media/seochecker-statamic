@@ -11,13 +11,15 @@ use Statamic\Support\Traits\FluentlyGetsAndSets;
 
 class Report implements Arrayable, Jsonable
 {
+    use FluentlyGetsAndSets;
+
     protected string $id;
     protected string $domain;
-    protected array $report;
+    protected null|array $report = [];
     protected string $status;
     protected string $created_at;
 
-    public static function create($id = null): self
+    public static function create($id = null)
     {
         if ($id) {
             $instance = new self();
@@ -29,42 +31,32 @@ class Report implements Arrayable, Jsonable
         return new self();
     }
 
-    public function id($id = null): static
+    public function id($id = null)
     {
-        $this->id = $id;
-
-        return $this;
+        return $this->fluentlyGetOrSet('id')->args(func_get_args());
     }
 
-    public function domain($domain = null): static
+    public function domain($domain = null)
     {
-        $this->domain = $domain;
-
-        return $this;
+        return $this->fluentlyGetOrSet('domain')->args(func_get_args());
     }
 
-    public function report($report = []): static
+    public function report($report = [])
     {
-        $this->report = $report;
-
-        return $this;
+        return $this->fluentlyGetOrSet('report')->args(func_get_args());
     }
 
-    public function status($status = null): static
+    public function status($status = null)
     {
-        $this->status = $status;
-
-        return $this;
+        return $this->fluentlyGetOrSet('status')->args(func_get_args());
     }
 
-    public function created_at($created_at = null): static
+    public function created_at($created_at = null)
     {
-        $this->created_at = $created_at;
-
-        return $this;
+        return $this->fluentlyGetOrSet('created_at')->args(func_get_args());
     }
 
-    public function path(): string
+    public function path()
     {
         return storage_path('statamic/seopulse/reports/'.$this->id.'.yaml');
     }
@@ -105,7 +97,7 @@ class Report implements Arrayable, Jsonable
             ->values();
     }
 
-    public function load(): static
+    public function load()
     {
         $raw = YAML::parse(File::get($this->path()));
 
@@ -124,20 +116,20 @@ class Report implements Arrayable, Jsonable
         return File::exists($this->path());
     }
 
-    public function save(): static
+    public function save()
     {
         File::put($this->path(), YAML::dump($this->toArray()));
 
         return $this;
     }
-    public function delete(): bool
+    public function delete()
     {
         File::delete($this->path());
 
         return true;
     }
 
-    public static function preparePath(): string
+    public static function preparePath()
     {
         $path = storage_path('statamic/seopulse/reports');
 
@@ -148,7 +140,7 @@ class Report implements Arrayable, Jsonable
         return $path;
     }
 
-    public function toArray(): array
+    public function toArray()
     {
         return [
             'id' => $this->id,
@@ -159,7 +151,7 @@ class Report implements Arrayable, Jsonable
         ];
     }
 
-    public function toJson($options = 0): bool|string
+    public function toJson($options = 0)
     {
         return json_encode($this->toArray());
     }

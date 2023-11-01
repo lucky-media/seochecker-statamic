@@ -1,9 +1,9 @@
-import CreateReport from './components/reports/CreateReport.vue';
-import ReportTable from './components/reports/ReportTable.vue';
-import ShowReport from './components/reports/ShowReport.vue';
+import CreateReport from '@/pages/reports/Create.vue';
+import IndexReport from '@/pages/reports/Index.vue';
+import ShowReport from '@/pages/reports/Show.vue';
 
 Statamic.booting(() => {
-  Statamic.$components.register('sp-table', ReportTable);
+  Statamic.$components.register('sp-index', IndexReport);
   Statamic.$components.register('sp-create-report', CreateReport);
   Statamic.$components.register('sp-show-report', ShowReport);
 });

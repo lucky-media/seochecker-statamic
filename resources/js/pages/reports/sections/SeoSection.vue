@@ -74,9 +74,9 @@
 </template>
 
 <script>
-import CardHeader from "../../card/CardHeader.vue";
-import Card from "../../card/Card.vue";
-import InfoItem from "../../infolist/InfoItem.vue";
+import CardHeader from "../../../components/card/CardHeader.vue";
+import Card from "../../../components/card/Card.vue";
+import InfoItem from "../../../components/infolist/InfoItem.vue";
 
 export default {
     components: {

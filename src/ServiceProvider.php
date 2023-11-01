@@ -58,4 +58,16 @@ class ServiceProvider extends AddonServiceProvider
                 ->label('Delete SEOPulse report');
         });
     }
+
+    protected function registerAddonConfig()
+    {
+        $this->mergeConfigFrom(__DIR__.'/../config/seopulse.php', 'statamic.seopulse');
+
+        $this->publishes([
+            __DIR__.'/../config/seopulse.php' => config_path('statamic/seopulse.php'),
+        ], 'statamic-seopulse-config');
+
+        return $this;
+    }
+
 }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      v-if="reports.length === 0"
+      v-if="reports.length === 0 && !loading"
       class="flex flex-col p-8 mt-10 sp-space-y-6 sp-max-w-xl sp-mx-auto card sp-items-center"
     >
       <h1>Reports</h1>
@@ -18,11 +18,8 @@
       </div>
     </div>
 
-    <template v-if="reports.length !== 0">
-      <div
-        v-if="reports.length !== 0"
-        class="flex flex-col items-start justify-between p-4 md:flex-row md:items-center"
-      >
+    <template v-if="reports.length !== 0 && !loading">
+      <div class="flex flex-col items-start justify-between p-4 md:flex-row md:items-center">
         <h2 class="flex items-end justify-end mb-2 md:m-0">
           <span class="w-6 h-6 mr-2 text-gray-800">
             <svg-icon name="telescope" class="w-5 h-5 text-gray-700" />
@@ -72,20 +69,36 @@
 </template>
 
 <script>
-import RelativeDate from '../RelativeDate.vue';
+import RelativeDate from "../../components/RelativeDate.vue";
 
 export default {
-  props: ['reports'],
   components: {
     RelativeDate,
+  },
+  data() {
+    return {
+      reports: [],
+      loading: true,
+    };
+  },
+  mounted() {
+    this.load();
   },
   methods: {
     destroy(id) {
       Statamic.$request.delete(cp_url(`/seopulse/${id}`)).then((response) => {
         if (response.data.success) {
-          window.location.reload();
+            this.load();
         }
       });
+    },
+    load() {
+      Statamic.$request.get(cp_url(`/seopulse/fetch`)).then((response) => {
+        this.reports = response.data;
+        this.loading = false;
+      });
+
+        setTimeout(() => this.load(), 3000);
     },
   },
 };

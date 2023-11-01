@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import Card from "../../card/Card.vue";
-import CardBody from "../../card/CardBody.vue";
-import AuditCard from "../../AuditCard.vue";
+import Card from "../../../components/card/Card.vue";
+import CardBody from "../../../components/card/CardBody.vue";
+import AuditCard from "../../../components/AuditCard.vue";
 
 export default {
     props: ['audit'],

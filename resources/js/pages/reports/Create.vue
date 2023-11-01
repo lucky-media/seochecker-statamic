@@ -81,8 +81,8 @@ export default {
           this.success = true;
 
           setTimeout(() => {
-            window.location.href = cp_url(`seopulse/${data.data.id}`);
-          }, 2000);
+            window.location.href = cp_url(`seopulse`);
+          }, 1000);
         });
     },
   },
