@@ -3,6 +3,7 @@
     <performance-section :scores="report.lighthouse" class="mb-4" />
     <audit-section :audit="report.lighthouse.audit" />
     <seo-section :seo="report.seo" />
+    <seo-content-section :content="report.content" />
     <meta-section :audit="report.og_graph.audit" />
     <meta-preview
       :og_graph="report.og_graph"
@@ -23,6 +24,7 @@ import AuditSection from './sections/AuditSection.vue';
 import MetaPreview from './sections/MetaPreview.vue';
 import MetaSection from './sections/MetaSection.vue';
 import JsonLdSchema from './sections/JsonLdSchema.vue';
+import SeoContentSection from './sections/SeoContentSection.vue';
 
 export default {
   components: {
@@ -32,6 +34,8 @@ export default {
     MetaPreview,
     MetaSection,
     JsonLdSchema,
+    SeoContentSection,
+    SeoSection,
   },
   props: ['report', 'domain'],
 };
