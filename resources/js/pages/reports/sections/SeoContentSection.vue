@@ -14,6 +14,23 @@
         </div>
       </div>
     </info-item>
+
+    <info-item title="Broken Images" :score="content.broken_images.score">
+      <p class="font-medium">{{ content.broken_images.description }}</p>
+    </info-item>
+
+    <info-item
+      title="Link Scores"
+      v-for="(value, key) in this.content.link_scores"
+      :key="key"
+      :score="value.score"
+    >
+      <div>
+        <p>
+          {{ value.description }} : <b>{{ value.value }}</b>
+        </p>
+      </div>
+    </info-item>
   </card>
 </template>
 
