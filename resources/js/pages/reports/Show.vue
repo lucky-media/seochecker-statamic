@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <performance-section :scores="report.lighthouse" class="mb-4" />
+  <div class="sp-space-y-4">
+    <performance-section :scores="report.lighthouse" />
     <audit-section :audit="report.lighthouse.audit" />
     <seo-section :seo="report.seo" />
     <seo-content-section :content="report.content" />

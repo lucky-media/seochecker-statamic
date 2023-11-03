@@ -49,24 +49,6 @@
         <p>{{ seo.lang.description }}</p>
       </div>
     </info-item>
-
-    <info-item title="Images without alt" :score="seo.image_scores[0].score">
-      <div class="flex flex-col items-start">
-        <p>{{ seo.image_scores[0].description }}</p>
-        <p>
-          Count: <b>{{ seo.image_scores[0].value }}</b>
-        </p>
-      </div>
-    </info-item>
-
-    <info-item title="Images without src" :score="seo.image_scores[1].score">
-      <div class="flex flex-col items-start">
-        <p>{{ seo.image_scores[1].description }}</p>
-        <p>
-          Count: <b>{{ seo.image_scores[1].value }}</b>
-        </p>
-      </div>
-    </info-item>
   </card>
 </template>
 

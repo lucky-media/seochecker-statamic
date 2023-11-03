@@ -20,15 +20,29 @@
     </info-item>
 
     <info-item
-      title="Link Scores"
+      title="Images without src"
       v-for="(value, key) in this.content.link_scores"
       :key="key"
       :score="value.score"
     >
+      <p class="font-medium">
+        {{ value.description }}
+      </p>
+    </info-item>
+
+    <info-item
+      title="Multiple Headings"
+      :score="content.multiple_headings.score"
+    >
       <div>
-        <p>
-          {{ value.description }} : <b>{{ value.value }}</b>
-        </p>
+        <p class="font-medium">{{ content.multiple_headings.description }}</p>
+      </div>
+    </info-item>
+
+    <info-item title="Images without alt" :score="content.no_alt.score">
+      <div class="sp-space-y-1 sp-divide-gray-200 sp-divide-y">
+        <p class="font-medium">{{ content.no_alt.description }}</p>
+        <p class="font-medium sp-pt-1">{{ content.no_alt.value[0] }}</p>
       </div>
     </info-item>
   </card>
@@ -46,9 +60,7 @@ export default {
     Card,
     CardHeader,
   },
-  mounted() {
-    console.log(this.content);
-  },
+
   methods: {
     unslugify,
   },
