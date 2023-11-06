@@ -3,15 +3,13 @@
     <card-header> SEO Content </card-header>
 
     <info-item title="Heading Count" score="info">
-      <div class="flex flex-col items-start">
-        <div class="sp-w-full sp-divide-gray-200 sp-divide-y">
-          <h1 class="py-2 leading-none">h1: {{ content.headingCount.h1 }}</h1>
-          <h2 class="py-2 leading-none">h2: {{ content.headingCount.h2 }}</h2>
-          <h3 class="py-2 leading-none">h3: {{ content.headingCount.h3 }}</h3>
-          <h4 class="py-2 leading-none">h4: {{ content.headingCount.h4 }}</h4>
-          <h5 class="py-2 leading-none">h5: {{ content.headingCount.h5 }}</h5>
-          <h5 class="py-2 leading-none">h6: {{ content.headingCount.h6 }}</h5>
-        </div>
+      <div class="sp-w-full sp-divide-gray-200 sp-divide-y">
+        <h1 class="py-2 leading-none">h1: {{ content.headingCount.h1 }}</h1>
+        <h2 class="py-2 leading-none">h2: {{ content.headingCount.h2 }}</h2>
+        <h3 class="py-2 leading-none">h3: {{ content.headingCount.h3 }}</h3>
+        <h4 class="py-2 leading-none">h4: {{ content.headingCount.h4 }}</h4>
+        <h5 class="py-2 leading-none">h5: {{ content.headingCount.h5 }}</h5>
+        <h5 class="py-2 leading-none">h6: {{ content.headingCount.h6 }}</h5>
       </div>
     </info-item>
 
@@ -34,15 +32,13 @@
       title="Multiple Headings"
       :score="content.multiple_headings.score"
     >
-      <div>
-        <p class="font-medium">{{ content.multiple_headings.description }}</p>
-      </div>
+      <p class="font-medium">{{ content.multiple_headings.description }}</p>
     </info-item>
 
     <info-item title="Images without alt" :score="content.no_alt.score">
-      <div class="sp-space-y-1 sp-divide-gray-200 sp-divide-y">
+      <div class="sp-divide-gray-200 sp-divide-y">
         <p class="font-medium">{{ content.no_alt.description }}</p>
-        <p class="font-medium sp-pt-1">{{ content.no_alt.value[0] }}</p>
+        <p class="font-medium">{{ content.no_alt.value[0] }}</p>
       </div>
     </info-item>
   </card>
