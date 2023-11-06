@@ -32,7 +32,9 @@
       title="Multiple Headings"
       :score="content.multiple_headings.score"
     >
-      <p class="font-medium">{{ content.multiple_headings.description }}</p>
+      <div>
+        <p class="font-medium">{{ content.multiple_headings.description }}</p>
+      </div>
     </info-item>
 
     <info-item title="Images without alt" :score="content.no_alt.score">
