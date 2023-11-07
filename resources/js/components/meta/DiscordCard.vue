@@ -7,7 +7,7 @@
       class="inline-block sp-w-[432px] sp-bg-gray-800 p-4 sp-rounded"
     >
       <p class="sp-text-xs sp-uppercase sp-leading-[11px] sp-text-gray-400">
-        {{ url }}
+        {{ site_name }}
       </p>
       <h3 v-if="site_name" class="py-2 sp-text-white sp-font-semibold">
         {{ site_name }}

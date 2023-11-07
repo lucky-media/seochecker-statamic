@@ -1,5 +1,5 @@
 <template>
-  <div class="sp-space-y-4 sp-pt-4">
+  <div class="sp-space-y-4">
     <!-- Facebook -->
     <facebook-card
       :image="og_graph.image"
@@ -33,10 +33,10 @@
 </template>
 
 <script>
-import FacebookCard from '../../../components/meta/FacebookCard.vue';
-import TwitterCard from '../../../components/meta/TwitterCard.vue';
-import LinkedinCard from '../../../components/meta/LinkedinCard.vue';
-import DiscordCard from '../../../components/meta/DiscordCard.vue';
+import FacebookCard from '@/components/meta/FacebookCard.vue';
+import TwitterCard from '@/components/meta/TwitterCard.vue';
+import LinkedinCard from '@/components/meta/LinkedinCard.vue';
+import DiscordCard from '@/components/meta/DiscordCard.vue';
 
 export default {
   components: {
