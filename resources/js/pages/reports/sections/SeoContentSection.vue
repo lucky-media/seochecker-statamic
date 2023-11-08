@@ -14,7 +14,7 @@
     </info-item>
 
     <info-item title="Broken Images" :score="content.broken_images.score">
-      <p class="font-medium">{{ content.broken_images.description }}</p>
+      <p>{{ content.broken_images.description }}</p>
     </info-item>
 
     <info-item
@@ -23,7 +23,7 @@
       :key="key"
       :score="value.score"
     >
-      <p class="font-medium">
+      <p>
         {{ value.description }}
       </p>
     </info-item>
@@ -32,15 +32,13 @@
       title="Multiple Headings"
       :score="content.multiple_headings.score"
     >
-      <div>
-        <p class="font-medium">{{ content.multiple_headings.description }}</p>
-      </div>
+      <p>{{ content.multiple_headings.description }}</p>
     </info-item>
 
     <info-item title="Images without alt" :score="content.no_alt.score">
       <div class="sp-divide-gray-200 sp-divide-y">
-        <p class="font-medium">{{ content.no_alt.description }}</p>
-        <p class="font-medium">{{ content.no_alt.value[0] }}</p>
+        <p>{{ content.no_alt.description }}</p>
+        <p>{{ content.no_alt.value[0] }}</p>
       </div>
     </info-item>
   </card>

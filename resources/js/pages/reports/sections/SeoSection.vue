@@ -3,51 +3,47 @@
     <card-header> Common SEO Issues </card-header>
 
     <info-item title="Meta Title Test" :score="seo.title.score">
-      <div class="flex flex-col items-start space-y-2">
+      <div class="flex flex-col items-start sp-space-y-1">
         <p>{{ seo.title.description }}</p>
         <p>
-          Text: <b>{{ seo.title.value }}</b>
+          <span class="sp-text-gray-600 sp-font-semibold">Text:</span>
+          {{ seo.title.value }}
         </p>
         <p>
-          Characters: <b>{{ seo.title.value.length }}</b>
+          <b class="sp-text-gray-600 sp-font-semibold"> Length:</b>
+          {{ seo.title.value.length }} characters
         </p>
       </div>
     </info-item>
 
     <info-item title="Meta Description Test" :score="seo.description.score">
-      <div class="flex flex-col items-start space-y-2">
+      <div class="flex flex-col items-start sp-space-y-1">
         <p>{{ seo.description.description }}</p>
         <p>
-          Text: <b>{{ seo.description.value }}</b>
+          <span class="sp-text-gray-600 sp-font-semibold">Text:</span>
+          {{ seo.description.value }}
         </p>
         <p>
-          Characters: <b>{{ seo.description.value.length }}</b>
+          <b class="sp-text-gray-600 sp-font-semibold"> Length:</b>
+          {{ seo.description.value.length }} characters
         </p>
       </div>
     </info-item>
 
     <info-item title="Canonical Test" :score="seo.canonical.score">
-      <div class="flex flex-col items-start space-y-2">
-        <p>{{ seo.canonical.description }}</p>
-      </div>
+      <p>{{ seo.canonical.description }}</p>
     </info-item>
 
     <info-item title="Keywords Test" :score="seo.keywords.score">
-      <div class="flex flex-col items-start space-y-2">
-        <p>{{ seo.keywords.description }}</p>
-      </div>
+      <p>{{ seo.keywords.description }}</p>
     </info-item>
 
     <info-item title="Index Tag Test" :score="seo.index.score">
-      <div class="flex flex-col items-start space-y-2">
-        <p>{{ seo.index.description }}</p>
-      </div>
+      <p>{{ seo.index.description }}</p>
     </info-item>
 
     <info-item title="Lang Tag Test" :score="seo.lang.score">
-      <div class="flex flex-col items-start space-y-2">
-        <p>{{ seo.lang.description }}</p>
-      </div>
+      <p>{{ seo.lang.description }}</p>
     </info-item>
   </card>
 </template>
