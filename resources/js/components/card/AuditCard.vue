@@ -23,7 +23,9 @@
         />
       </div>
 
-      <progress-bar :currentValue="this.value" :maxValue="3.4" />
+      <template v-if="this.value">
+        <progress-bar :currentValue="this.value" :maxValue="3.4" />
+      </template>
 
       <p v-text="description" class="sp-text-sm" />
     </card-body>
