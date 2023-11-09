@@ -31,11 +31,11 @@
 </template>
 
 <script>
-import Card from './card/Card.vue';
-import CardBody from './card/CardBody.vue';
-import CardHeader from './card/CardHeader.vue';
-import unslugify from '../services/unslugify';
-import ProgressBar from './ui/ProgressBar.vue';
+import Card from './Card.vue';
+import CardBody from './CardBody.vue';
+import CardHeader from './CardHeader.vue';
+import unslugify from '../../services/unslugify';
+import ProgressBar from '../ui/ProgressBar.vue';
 
 export default {
   components: {

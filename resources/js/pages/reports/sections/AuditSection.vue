@@ -14,7 +14,7 @@
 <script>
 import Card from '@/components/card/Card.vue';
 import CardBody from '@/components/card/CardBody.vue';
-import AuditCard from '@/components/AuditCard.vue';
+import AuditCard from '@/components/card/AuditCard.vue';
 
 export default {
   props: ['audit'],
