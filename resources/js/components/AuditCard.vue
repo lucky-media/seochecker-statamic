@@ -2,8 +2,8 @@
   <card>
     <card-header>{{ unslugify(this.title) }}</card-header>
     <card-body>
-      <progress-bar :value="this.value" max="3.4" />
-      <!-- <div class="flex items-center">
+      <progress-bar :currentValue="this.value" :maxValue="3.4" />
+      <div class="flex items-center mt-4">
         <div
           class="sp-w-3 sp-h-3 sp-rounded-full sp-shrink-0 sp-bg-green-500 sp-mr-2"
           :class="{
@@ -22,9 +22,9 @@
             'sp-text-red-500': score === 'failed',
           }"
         />
-      </div> -->
+      </div>
 
-      <p v-text="description" class="sp-text-sm sp-mt-4" />
+      <p v-text="description" class="sp-text-sm sp-mt-2" />
     </card-body>
   </card>
 </template>

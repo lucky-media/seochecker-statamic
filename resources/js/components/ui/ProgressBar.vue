@@ -5,7 +5,7 @@
         class="flex flex-col sp-items-center sp-justify-center sp-mb-1 sp-text-xs sp-min-w-max sp-transform sp-translate-x-1/2"
       >
         <span class="sp-text-xs sp-min-w-max sp-text-gray-500">
-          {{ this.value }}
+          {{ currentValue }}
         </span>
         <!-- Triangle -->
         <div class="sp-inline-block sp-w-1.5 sp-overflow-hidden">
@@ -31,10 +31,10 @@ export default {
   methods: {
     calWidth: function () {
       // Split value because ose values has 's' letter
-      let value = this.value.split('s')[0];
-      return (Number(value) / Number(this.max)) * 100;
+      let value = this.currentValue.split('s')[0];
+      return (Number(value) / Number(this.maxValue)) * 100;
     },
   },
-  props: ['value', 'max'],
+  props: ['currentValue', 'maxValue'],
 };
 </script>
