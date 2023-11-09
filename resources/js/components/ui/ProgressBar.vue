@@ -9,7 +9,7 @@
     </div>
     <div :style="{ width: `${calWidth()}%` }" class="flex sp-justify-end">
       <div
-        class="flex flex-col sp-items-center sp-justify-center sp-mb-1 sp-text-xs sp-min-w-max sp-transform sp-translate-x-1/2"
+        class="flex flex-col sp-items-center sp-justify-center sp-mt-1 sp-text-xs sp-min-w-max sp-transform sp-translate-x-1/2"
       >
         <!-- Triangle -->
         <div class="sp-inline-block sp-w-1.5 sp-overflow-hidden">
