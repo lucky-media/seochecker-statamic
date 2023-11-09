@@ -2,7 +2,8 @@
   <card>
     <card-header>{{ unslugify(this.title) }}</card-header>
     <card-body>
-      <div class="flex items-center">
+      <progress-bar :value="this.value" max="3.4" />
+      <!-- <div class="flex items-center">
         <div
           class="sp-w-3 sp-h-3 sp-rounded-full sp-shrink-0 sp-bg-green-500 sp-mr-2"
           :class="{
@@ -21,9 +22,9 @@
             'sp-text-red-500': score === 'failed',
           }"
         />
-      </div>
+      </div> -->
 
-      <p v-text="description" class="sp-text-sm sp-mt-2" />
+      <p v-text="description" class="sp-text-sm sp-mt-4" />
     </card-body>
   </card>
 </template>
@@ -33,12 +34,14 @@ import Card from './card/Card.vue';
 import CardBody from './card/CardBody.vue';
 import CardHeader from './card/CardHeader.vue';
 import unslugify from '../services/unslugify';
+import ProgressBar from './ui/ProgressBar.vue';
 
 export default {
   components: {
     CardHeader,
     CardBody,
     Card,
+    ProgressBar,
   },
   methods: {
     unslugify,
