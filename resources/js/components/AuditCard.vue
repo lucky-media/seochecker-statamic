@@ -1,9 +1,8 @@
 <template>
   <card>
     <card-header>{{ unslugify(this.title) }}</card-header>
-    <card-body>
-      <progress-bar :currentValue="this.value" :maxValue="3.4" />
-      <div class="flex items-center mt-4">
+    <card-body class="sp-space-y-3">
+      <div class="flex items-center">
         <div
           class="sp-w-3 sp-h-3 sp-rounded-full sp-shrink-0 sp-bg-green-500 sp-mr-2"
           :class="{
@@ -24,7 +23,9 @@
         />
       </div>
 
-      <p v-text="description" class="sp-text-sm sp-mt-2" />
+      <progress-bar :currentValue="this.value" :maxValue="3.4" />
+
+      <p v-text="description" class="sp-text-sm" />
     </card-body>
   </card>
 </template>
