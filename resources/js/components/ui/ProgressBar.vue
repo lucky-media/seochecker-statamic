@@ -1,13 +1,19 @@
 <template>
   <div>
     <div class="relative">
-      <div class="flex h-2 overflow-hidden rounded sp-bg-gray-200">
-        <div class="flex-1 sp-bg-green-500"></div>
-        <div class="flex-1 sp-bg-orange-400"></div>
-        <div class="flex-1 sp-bg-red-500"></div>
+      <div class="flex h-2 overflow-hidden rounded sp-bg-red-500">
+        <div
+          class="sp-bg-green-500"
+          :style="{ width: `${calcWidth(passedValue)}%` }"
+        ></div>
+        <div
+          class="sp-bg-orange-400"
+          :style="{ width: `${calcWidth(warningValue)}%` }"
+        ></div>
       </div>
     </div>
-    <div :style="{ width: `${calWidth()}%` }" class="flex sp-justify-end">
+
+    <div :style="{ width: `${position()}%` }" class="flex sp-justify-end">
       <div
         class="flex flex-col sp-items-center sp-justify-center sp-mt-1 sp-text-xs sp-min-w-max sp-transform sp-translate-x-1/2"
       >
@@ -19,7 +25,7 @@
         </div>
 
         <span class="sp-text-xs sp-min-w-max sp-text-gray-500">
-          {{ currentValue }}
+          {{ resultValue }}
         </span>
       </div>
     </div>
@@ -29,12 +35,15 @@
 <script>
 export default {
   methods: {
-    calWidth: function () {
-      // Split value because ose values has 's' letter
-      let value = this.currentValue.split('s')[0];
+    position: function () {
+      let value = this.resultValue.split('s')[0];
       return (Number(value) / Number(this.maxValue)) * 100;
     },
+    calcWidth: function (value) {
+      return Math.floor((Number(value) / Number(this.maxValue)) * 100);
+    },
   },
-  props: ['currentValue', 'maxValue'],
+
+  props: ['resultValue', 'passedValue', 'warningValue', 'maxValue'],
 };
 </script>
