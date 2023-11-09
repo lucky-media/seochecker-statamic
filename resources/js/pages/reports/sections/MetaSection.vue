@@ -7,7 +7,7 @@
         <div class="flex flex-col items-start space-y-2">
           <p v-if="key.score === 'failed'">{{ value.description }}</p>
           <p>
-            <b>{{ value.value }}</b>
+            {{ value.value }}
           </p>
         </div>
       </info-item>
