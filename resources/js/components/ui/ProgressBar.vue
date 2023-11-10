@@ -5,7 +5,7 @@
 
 <template>
   <div>
-    <div class="flex sp-rounded-r" :class="[indicator > 100 && 'relative']">
+    <div class="flex" :class="[indicator > 100 && 'relative']">
       <div class="flex w-2/3 h-2" :class="[indicator <= 100 && 'relative']">
         <div class="flex-1 sp-bg-green-500 sp-rounded-l" />
         <div class="flex-1 sp-bg-yellow-500" />
