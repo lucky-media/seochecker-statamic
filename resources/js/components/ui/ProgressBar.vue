@@ -1,19 +1,20 @@
 <template>
-  <div v-if="indicator() < maxValue * 100">
+  <!-- maxValue to % -->
+  <div v-if="indicatorValue() < maxValue * 100">
     <div class="relative overflow-hidden rounded">
       <div class="flex h-2 sp-bg-red-500">
         <div
           class="sp-bg-green-500"
-          :style="{ width: `${width(passedValue)}%` }"
+          :style="{ width: `${widthValue(passedValue)}%` }"
         />
         <div
           class="sp-bg-orange-400"
-          :style="{ width: `${width(warningValue)}%` }"
+          :style="{ width: `${widthValue(warningValue)}%` }"
         />
       </div>
     </div>
 
-    <div :style="{ width: `${indicator()}%` }" class="flex sp-justify-end">
+    <div :style="{ width: `${indicatorValue()}%` }" class="flex sp-justify-end">
       <div
         class="flex flex-col sp-items-center sp-justify-center sp-mt-1 sp-text-xs sp-min-w-max sp-transform sp-translate-x-1/2"
       >
@@ -35,12 +36,12 @@
 <script>
 export default {
   methods: {
-    indicator: function () {
+    indicatorValue: function () {
       // Split value from 's'
       let value = this.resultValue.split(' ')[0];
       return (Number(value) / Number(this.maxValue)) * 10;
     },
-    width: function (value) {
+    widthValue: function (value) {
       return Math.floor((Number(value) / Number(this.maxValue)) * 100);
     },
   },
