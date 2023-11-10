@@ -5,7 +5,7 @@
         class="flex w-2/3 h-2 sp-rounded-l"
         :class="[indicator < 100 && 'relative']"
       >
-        <div class="flex-1 sp-bg-green-500" />
+        <div class="flex-1 sp-bg-green-500 sp-rounded-l" />
         <div class="flex-1 sp-bg-yellow-500" />
         <!-- Indicator Position -->
         <div :style="{ left: `${indicator}%` }" class="absolute top-2">
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div class="w-1/3 h-2 sp-bg-red-500"></div>
+      <div class="w-1/3 h-2 sp-bg-red-500 sp-rounded-r"></div>
     </div>
   </div>
 </template>
