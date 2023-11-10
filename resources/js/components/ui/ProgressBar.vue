@@ -1,5 +1,5 @@
 <template>
-  <div v-if="indicator() > maxValue">
+  <div v-if="indicator() < maxValue * 100">
     <div class="relative overflow-hidden rounded">
       <div class="flex h-2 sp-bg-red-500">
         <div
