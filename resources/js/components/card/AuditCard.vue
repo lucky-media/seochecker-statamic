@@ -13,7 +13,7 @@
         />
         <h1
           class="sp-font-semibold sp-text-3xl"
-          v-text="resultValue"
+          v-text="value"
           :class="{
             'sp-text-green-500': score === 'passed',
             'sp-text-yellow-500': score === 'warning',
@@ -22,14 +22,9 @@
         />
       </div>
 
-      <progress-bar
-        :resultValue="resultValue"
-        :maxValue="maxValue"
-        :passedValue="passedValue"
-        :warningValue="warningValue"
-      />
+      <progress-bar :value="value" :maxValue="maxValue" />
 
-      <p v-text="description" class="sp-text-sm" />
+      <p v-text="description" class="mt-8 sp-text-sm" />
     </card-body>
   </card>
 </template>
@@ -47,14 +42,6 @@ export default {
     Card,
     ProgressBar,
   },
-  props: [
-    'title',
-    'score',
-    'description',
-    'resultValue',
-    'passedValue',
-    'maxValue',
-    'warningValue',
-  ],
+  props: ['title', 'score', 'description', 'value', 'maxValue'],
 };
 </script>

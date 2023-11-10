@@ -1,51 +1,44 @@
 <template>
-  <!-- maxValue to % -->
-  <div v-if="indicatorValue() < maxValue * 100">
-    <div class="relative overflow-hidden rounded">
-      <div class="flex h-2 sp-bg-red-500">
-        <div
-          class="sp-bg-green-500"
-          :style="{ width: `${widthValue(passedValue)}%` }"
-        />
-        <div
-          class="sp-bg-orange-400"
-          :style="{ width: `${widthValue(warningValue)}%` }"
-        />
-      </div>
-    </div>
-
-    <div :style="{ width: `${indicatorValue()}%` }" class="flex sp-justify-end">
+  <div>
+    <div class="flex sp-rounded-r" :class="[indicator === 100 && 'relative']">
       <div
-        class="flex flex-col sp-items-center sp-justify-center sp-mt-1 sp-text-xs sp-min-w-max sp-transform sp-translate-x-1/2"
+        class="flex w-2/3 h-2 sp-rounded-l"
+        :class="[indicator < 100 && 'relative']"
       >
-        <!-- Triangle -->
-        <div class="sp-inline-block sp-w-1.5 sp-overflow-hidden">
+        <div class="flex-1 sp-bg-green-500" />
+        <div class="flex-1 sp-bg-yellow-500" />
+        <!-- Indicator Position -->
+        <div :style="{ left: `${indicator}%` }" class="absolute top-2">
           <div
-            class="sp-bg-gray-700 sp-rotate-45 sp-transform sp-origin-bottom-left sp-h-1 sp-w-1"
-          />
+            class="flex flex-col sp-items-center sp-justify-center sp-mt-1 sp-text-xs sp-transform -sp-translate-x-1/2"
+          >
+            <div class="sp-inline-block sp-w-1.5 sp-overflow-hidden">
+              <div
+                class="sp-bg-gray-700 sp-rotate-45 sp-transform sp-origin-bottom-left sp-h-1 sp-w-1"
+              />
+            </div>
+            <span class="text-center sp-text-xs sp-text-gray-500">
+              {{ value }}
+            </span>
+          </div>
         </div>
-
-        <span class="sp-text-xs sp-min-w-max sp-text-gray-500">
-          {{ resultValue }}
-        </span>
       </div>
+      <div class="w-1/3 h-2 sp-bg-red-500"></div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  methods: {
-    indicatorValue: function () {
-      // Split value from 's'
-      let value = this.resultValue.split(' ')[0];
-      return (Number(value) / Number(this.maxValue)) * 10;
-    },
-    widthValue: function (value) {
-      return Math.floor((Number(value) / Number(this.maxValue)) * 100);
+  props: ['value', 'maxValue'],
+  computed: {
+    indicator: function () {
+      let numberValue = this.value.split(' ')[0];
+      if (numberValue > this.maxValue) {
+        return 100;
+      }
+      return (numberValue / this.maxValue) * 100;
     },
   },
-
-  props: ['resultValue', 'passedValue', 'warningValue', 'maxValue'],
 };
 </script>
