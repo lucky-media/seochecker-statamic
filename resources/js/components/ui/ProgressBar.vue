@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div v-if="position() > maxValue">
     <div class="relative">
       <div class="flex h-2 overflow-hidden rounded sp-bg-red-500">
         <div
           class="sp-bg-green-500"
-          :style="{ width: `${calcWidth(passedValue)}%` }"
+          :style="{ width: `${width(passedValue)}%` }"
         ></div>
         <div
           class="sp-bg-orange-400"
-          :style="{ width: `${calcWidth(warningValue)}%` }"
+          :style="{ width: `${width(warningValue)}%` }"
         ></div>
       </div>
     </div>
@@ -40,7 +40,7 @@ export default {
       let value = this.resultValue.split(' ')[0];
       return (Number(value) / Number(this.maxValue)) * 10;
     },
-    calcWidth: function (value) {
+    width: function (value) {
       return Math.floor((Number(value) / Number(this.maxValue)) * 100);
     },
   },

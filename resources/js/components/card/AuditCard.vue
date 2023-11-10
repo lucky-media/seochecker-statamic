@@ -22,14 +22,12 @@
         />
       </div>
 
-      <template v-if="this.maxValue">
-        <progress-bar
-          :resultValue="resultValue"
-          :maxValue="maxValue"
-          :passedValue="passedValue"
-          :warningValue="warningValue"
-        />
-      </template>
+      <progress-bar
+        :resultValue="resultValue"
+        :maxValue="maxValue"
+        :passedValue="passedValue"
+        :warningValue="warningValue"
+      />
 
       <p v-text="description" class="sp-text-sm" />
     </card-body>
