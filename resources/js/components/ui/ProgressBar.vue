@@ -36,8 +36,9 @@
 export default {
   methods: {
     position: function () {
-      let value = this.resultValue.split('s')[0];
-      return (Number(value) / Number(this.maxValue)) * 100;
+      // Split value from 's'
+      let value = this.resultValue.split(' ')[0];
+      return (Number(value) / Number(this.maxValue)) * 10;
     },
     calcWidth: function (value) {
       return Math.floor((Number(value) / Number(this.maxValue)) * 100);

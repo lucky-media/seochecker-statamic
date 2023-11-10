@@ -1,5 +1,5 @@
 <template>
-  <div class="sp-grid sp-grid-cols-2 sp-gap-4 sp-mb-4">
+  <div class="sp-grid md:sp-grid-cols-2 sp-gap-4 sp-mb-4">
     <audit-card
       title="Cumulative Layout Shift"
       :score="audit.cumulative_layout_shift.score"
@@ -31,9 +31,6 @@
       title="Page Size"
       :score="audit.page_size.score"
       :resultValue="audit.page_size.value"
-      :maxValue="1"
-      :passedValue="0.3"
-      :warningValue="0.7"
       :description="audit.page_size.description"
     />
     <audit-card
@@ -60,7 +57,7 @@
       :resultValue="audit.time_to_interactive.value"
       :passedValue="0.38"
       :warningValue="0.34"
-      :maxValue="0.72"
+      :maxValue="1.1"
       :description="audit.time_to_interactive.description"
     />
   </div>
@@ -77,9 +74,6 @@ export default {
     AuditCard,
     CardBody,
     Card,
-  },
-  mounted() {
-    console.log(this.audit);
   },
 };
 </script>
