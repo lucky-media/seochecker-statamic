@@ -1,19 +1,19 @@
 <template>
-  <div v-if="position() > maxValue">
-    <div class="relative">
-      <div class="flex h-2 overflow-hidden rounded sp-bg-red-500">
+  <div v-if="indicator() > maxValue">
+    <div class="relative overflow-hidden rounded">
+      <div class="flex h-2 sp-bg-red-500">
         <div
           class="sp-bg-green-500"
           :style="{ width: `${width(passedValue)}%` }"
-        ></div>
+        />
         <div
           class="sp-bg-orange-400"
           :style="{ width: `${width(warningValue)}%` }"
-        ></div>
+        />
       </div>
     </div>
 
-    <div :style="{ width: `${position()}%` }" class="flex sp-justify-end">
+    <div :style="{ width: `${indicator()}%` }" class="flex sp-justify-end">
       <div
         class="flex flex-col sp-items-center sp-justify-center sp-mt-1 sp-text-xs sp-min-w-max sp-transform sp-translate-x-1/2"
       >
@@ -35,7 +35,7 @@
 <script>
 export default {
   methods: {
-    position: function () {
+    indicator: function () {
       // Split value from 's'
       let value = this.resultValue.split(' ')[0];
       return (Number(value) / Number(this.maxValue)) * 10;
