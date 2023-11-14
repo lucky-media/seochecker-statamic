@@ -10,7 +10,7 @@
           Create Report
         </button>
       </div>
-      <p v-if="error" v-text="error" class="my-2 text-sm text-red-500"></p>
+      <p v-if="errors.length > 0" v-for="error in errors" v-text="error" class="my-2 text-sm text-red-500"></p>
     </div>
     <div
       v-if="loading"
@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       domain: this.app_url,
-      error: null,
+      errors: [],
       disabled: false,
       loading: false,
       success: false,
@@ -46,25 +46,27 @@ export default {
   },
   mounted() {
     if (this.app_env !== 'production') {
-      this.error = 'SEOPulse works only on a production environment';
+      this.errors.push(['SEOPulse works only on a production environment']);
       this.disabled = true;
     }
   },
   methods: {
     createReport() {
       if (this.domain.startsWith('http://')) {
-        this.error = 'Please enter a domain with SSL';
+        this.errors = [];
+        this.errors = ['Please enter a domain with SSL'];
         return;
       }
 
       if (!this.domain.startsWith(this.app_url)) {
-        this.error = 'Domain must start with ' + this.app_url;
+        this.errors = [];
+        this.errors = [`Domain must start with ${this.app_url}`];
         return;
       }
 
       this.loading = true;
       this.disabled = true;
-      this.error = null;
+      this.errors = [];
 
       this.fetchReport();
     },
@@ -73,6 +75,9 @@ export default {
         .post(this.create_report_url, { domain: this.domain })
         .then(({ data }) => {
           if (!data.success) {
+              this.errors = data.data.domain;
+              this.loading = false;
+              this.disabled = false;
             return;
           }
 

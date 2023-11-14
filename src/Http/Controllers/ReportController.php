@@ -66,7 +66,7 @@ class ReportController extends CpController
             'domain' => $request->domain,
         ]);
 
-        if ($response->failed()) {
+        if ($response->failed() || $response->serverError()) {
             throw new HttpResponseException(response()->json([
                 'success' => false,
                 'message' => 'Failed to get report',

@@ -1,5 +1,5 @@
-<!-- 
-  If the result is greater than 100%, the indicator goes to the end of the progress bar; 
+<!--
+  If the result is greater than 100%, the indicator goes to the end of the progress bar;
   otherwise, 100% of the progress bar is in the orange part at the end.
 -->
 
@@ -15,14 +15,11 @@
             class="flex flex-col sp-items-center sp-justify-center sp-mt-1 sp-text-xs sp-transform -sp-translate-x-1/2"
           >
             <!-- Triangle -->
-            <div class="sp-inline-block sp-w-1.5 sp-overflow-hidden">
+            <div class="sp-inline-block sp-w-3 sp-overflow-hidden">
               <div
-                class="sp-bg-gray-700 sp-rotate-45 sp-transform sp-origin-bottom-left sp-h-1 sp-w-1"
+                class="sp-bg-gray-700 sp-rotate-45 sp-transform sp-origin-bottom-left sp-h-2 sp-w-2"
               />
             </div>
-            <span class="text-center sp-text-xs sp-text-gray-500">
-              {{ value }}
-            </span>
           </div>
         </div>
       </div>
