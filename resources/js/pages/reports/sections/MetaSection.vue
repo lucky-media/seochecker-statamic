@@ -2,13 +2,11 @@
   <card class="mt-4">
     <card-header> Open Graph Tags </card-header>
 
-    <div v-for="(value, key) in audit" :key="key">
-      <info-item :title="unslugify(key)" :score="value.score">
-        <div class="flex flex-col items-start space-y-2">
-          <p v-if="key.score === 'failed'">{{ value.description }}</p>
-          <p>
-            {{ value.value }}
-          </p>
+    <div v-for="(item, key) in audit" :key="key">
+      <info-item :title="unslugify(key)" :score="item.score">
+        <div class="flex flex-col items-start space-y-2 sp-break-words overflow-x-auto">
+          <p v-if="item.score === 'failed'">{{ item.description }}</p>
+          <p v-text="item.value"></p>
         </div>
       </info-item>
     </div>

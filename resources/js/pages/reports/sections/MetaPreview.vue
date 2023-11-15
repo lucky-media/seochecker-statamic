@@ -4,7 +4,7 @@
     <facebook-card
       :image="og_graph.image"
       :desc="og_graph.description"
-      :site_name="og_graph.site_name"
+      :title="og_graph.title"
       :url="og_graph.url"
     />
 
@@ -17,13 +17,14 @@
 
     <!-- Linkedin -->
     <linkedin-card
-      :site_name="og_graph.site_name"
+      :title="og_graph.title"
       :image="og_graph.image"
       :url="og_graph.url"
     />
 
     <!-- Discord -->
     <discord-card
+      :title="og_graph.title"
       :site_name="og_graph.site_name"
       :image="og_graph.image"
       :url="og_graph.url"

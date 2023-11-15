@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import Status from '../Status.vue';
+import Status from '../ui/Status.vue';
 
 export default {
   components: { Status },

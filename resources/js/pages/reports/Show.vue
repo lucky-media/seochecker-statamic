@@ -1,7 +1,7 @@
 <template>
   <div class="sp-space-y-4">
     <performance-section :scores="report.lighthouse" />
-    <audit-section :audit="report.lighthouse.audit" />
+    <audit-section :audit="report.lighthouse.audit" :full_report="report.lighthouse.report" />
     <seo-section :seo="report.seo" />
     <seo-content-section :content="report.content" />
     <meta-section :audit="report.og_graph.audit" />
@@ -11,7 +11,7 @@
       :json_ld="report.json_ld"
       :domain="this.domain"
     />
-    <template v-if="report.json_ld.length != 0">
+    <template v-if="report.json_ld.length !== 0">
       <json-ld-schema :json_ld="report.json_ld" />
     </template>
   </div>

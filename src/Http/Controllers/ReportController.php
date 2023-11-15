@@ -2,6 +2,7 @@
 
 namespace LuckyMedia\SeopulseStatamic\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -29,7 +30,7 @@ class ReportController extends CpController
                 return [
                     'id' => $report['id'],
                     'domain' => $report['domain'],
-                    'created_at' => $report['created_at'],
+                    'created_at' => Carbon::create($report['created_at'])->diffForHumans(),
                     'status' => $report['status'],
                     'view_url' => '/cp/seopulse/' . $report['id'],
                 ];

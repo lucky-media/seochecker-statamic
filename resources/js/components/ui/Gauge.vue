@@ -50,9 +50,9 @@
 </template>
 
 <script>
-import Card from "./card/Card.vue";
-import CardHeader from "./card/CardHeader.vue";
-import CardBody from "./card/CardBody.vue";
+import Card from "../card/Card.vue";
+import CardHeader from "../card/CardHeader.vue";
+import CardBody from "../card/CardBody.vue";
 
 export default {
     components: {CardBody, CardHeader, Card},

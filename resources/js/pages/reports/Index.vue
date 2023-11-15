@@ -52,7 +52,7 @@
                 </span>
               </td>
               <td>
-                <relative-date :date="report.created_at"></relative-date>
+                  <span>{{ report.created_at }}</span>
               </td>
               <td class="float-right">
                 <dropdown-list>
@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import RelativeDate from "../../components/RelativeDate.vue";
+import RelativeDate from "../../components/ui/RelativeDate.vue";
 
 export default {
   components: {
