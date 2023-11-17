@@ -1,53 +1,30 @@
 <template>
-  <card class="max-w-xs">
-    <card-header>Status Legend</card-header>
-    <card-body class="flex sp-items-center sp-justify-center">
-      <!-- Pie Chart -->
-      <div
-        class="grid sp-w-32 sp-h-32 sp-rounded-full sp-overflow-hidden sp-grid-cols-2 sp-relative"
-      >
-        <div
-          class="bg-white sp-w-24 sp-h-24 sp-absolute sp-rounded-full sp-left-1/2 sp-top-1/2 -sp-translate-x-1/2 -sp-translate-y-1/2"
-        />
-        <div class="sp-bg-green-500" />
-        <div class="sp-bg-yellow-500" />
-        <div class="sp-bg-red-500" />
-        <div class="sp-bg-black" />
-      </div>
-
-      <!-- List of legend items -->
-      <div class="text-sm sp-space-y-2 sp-ml-5">
-        <div class="flex sp-items-center">
-          <div class="w-4 h-4 mr-2 sp-rounded-full sp-bg-green-500" />
-          Passed
-        </div>
-        <div class="flex sp-items-center">
-          <div class="w-4 h-4 mr-2 sp-rounded-full sp-bg-yellow-500" />
-          Warning
-        </div>
-        <div class="flex sp-items-center">
-          <div class="w-4 h-4 mr-2 sp-rounded-full sp-bg-red-500" />
-          Failed
-        </div>
-        <div class="flex sp-items-center">
-          <div class="w-4 h-4 mr-2 sp-rounded-full sp-bg-black" />
-          Info
-        </div>
-      </div>
-    </card-body>
-  </card>
+  <div class="flex space-x-4 sp-justify-end">
+    <div class="flex sp-items-center">
+      <status value="passed" />
+      <span class="text-sm sp-pl-1">Passed</span>
+    </div>
+    <div class="flex sp-items-center">
+      <status value="warning" />
+      <span class="text-sm sp-pl-1">Warning</span>
+    </div>
+    <div class="flex sp-items-center">
+      <status value="failed" />
+      <span class="text-sm sp-pl-1">Failed</span>
+    </div>
+    <div class="flex sp-items-center">
+      <status value="info" />
+      <span class="text-sm sp-pl-1">Info</span>
+    </div>
+  </div>
 </template>
 
 <script>
-import Card from '../card/Card.vue';
-import CardHeader from '../card/CardHeader.vue';
-import CardBody from '../card/CardBody.vue';
+import Status from './Status.vue';
 
 export default {
   components: {
-    Card,
-    CardHeader,
-    CardBody,
+    Status,
   },
 };
 </script>

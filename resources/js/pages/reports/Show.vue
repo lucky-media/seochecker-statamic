@@ -1,11 +1,11 @@
 <template>
   <div class="sp-space-y-4">
     <performance-section :scores="report.lighthouse" />
-    <status-legend />
     <audit-section
       :audit="report.lighthouse.audit"
       :full_report="report.lighthouse.report"
     />
+    <status-legend />
     <seo-section :seo="report.seo" />
     <seo-content-section :content="report.content" />
     <meta-section :audit="report.og_graph.audit" />
