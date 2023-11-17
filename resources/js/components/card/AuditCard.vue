@@ -1,6 +1,8 @@
 <template>
   <card>
-    <card-header>{{ title }}</card-header>
+    <card-header>
+      {{ title }}
+    </card-header>
     <card-body class="sp-space-y-3">
       <div class="flex items-center">
         <div
@@ -21,9 +23,7 @@
           }"
         />
       </div>
-
       <progress-bar :value="value" :maxValue="maxValue" />
-
       <p v-text="description" class="mt-8 sp-text-sm" />
     </card-body>
   </card>
