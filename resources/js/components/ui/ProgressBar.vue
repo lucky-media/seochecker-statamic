@@ -10,7 +10,10 @@
         <div class="flex-1 sp-bg-green-500 sp-rounded-l" />
         <div class="flex-1 sp-bg-yellow-500" />
         <!-- Indicator Position -->
-        <div :style="{ left: `${indicator}%` }" class="absolute top-2">
+        <div
+          :style="{ left: `${indicator}%` }"
+          class="absolute top-2 -sp-translate-x-1/2"
+        >
           <div
             class="flex flex-col sp-items-center sp-justify-center sp-mt-1 sp-text-xs sp-transform -sp-translate-x-1/2"
           >
