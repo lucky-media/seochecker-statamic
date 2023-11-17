@@ -1,20 +1,10 @@
 <template>
   <div class="flex space-x-4 sp-justify-end">
-    <div class="flex sp-items-center">
-      <status value="passed" />
-      <span class="text-sm sp-pl-1">Passed</span>
-    </div>
-    <div class="flex sp-items-center">
-      <status value="warning" />
-      <span class="text-sm sp-pl-1">Warning</span>
-    </div>
-    <div class="flex sp-items-center">
-      <status value="failed" />
-      <span class="text-sm sp-pl-1">Failed</span>
-    </div>
-    <div class="flex sp-items-center">
-      <status value="info" />
-      <span class="text-sm sp-pl-1">Info</span>
+    <div v-for="item in legend" :key="item.value" class="flex sp-items-center">
+      <status :value="item.value" />
+      <span class="text-sm sp-pl-1">
+          {{ item.label }}
+      </span>
     </div>
   </div>
 </template>
@@ -26,5 +16,27 @@ export default {
   components: {
     Status,
   },
+    data() {
+      return {
+          legend: [
+              {
+                  value: 'passed',
+                  label: 'Passed',
+              },
+              {
+                  value: 'warning',
+                  label: 'Warning',
+              },
+              {
+                  value: 'failed',
+                  label: 'Failed',
+              },
+              {
+                  value: 'info',
+                  label: 'Info',
+              },
+          ]
+      }
+    }
 };
 </script>
