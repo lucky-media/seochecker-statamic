@@ -43,9 +43,7 @@ export default {
     SeoSection,
     StatusLegend,
   },
-  mounted() {
-    console.log(this.report);
-  },
+
   props: ['report', 'domain'],
 };
 </script>
