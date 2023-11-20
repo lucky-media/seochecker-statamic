@@ -1,5 +1,12 @@
 <template>
   <div class="sp-space-y-4">
+    <!-- Google -->
+    <google-card
+      :title="og_graph.title"
+      :desc="og_graph.description"
+      :domain="this.domain"
+    />
+
     <!-- Facebook -->
     <facebook-card
       :image="og_graph.image"
@@ -38,6 +45,7 @@ import FacebookCard from '@/components/meta/FacebookCard.vue';
 import TwitterCard from '@/components/meta/TwitterCard.vue';
 import LinkedinCard from '@/components/meta/LinkedinCard.vue';
 import DiscordCard from '@/components/meta/DiscordCard.vue';
+import GoogleCard from '@/components/meta/GoogleCard.vue';
 
 export default {
   components: {
@@ -45,6 +53,7 @@ export default {
     TwitterCard,
     LinkedinCard,
     DiscordCard,
+    GoogleCard,
   },
   props: ['og_graph', 'twitter', 'domain'],
 };
