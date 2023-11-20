@@ -1,11 +1,11 @@
 <template>
-  <div class="w-[600px]">
+  <div class="max-w-[600px]">
     <h3 class="mb-2">Google</h3>
     <a
       :href="domain"
       target="_blank"
       rel="noreferrer"
-      class="!sp-text-blue-600 sp-text-lg hover:sp-underline sp-capitalize"
+      class="!sp-text-blue-800 sp-text-lg hover:sp-underline"
     >
       {{ title }}
     </a>
