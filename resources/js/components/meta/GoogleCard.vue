@@ -5,20 +5,20 @@
       :href="domain"
       target="_blank"
       rel="noreferrer"
-      class="!sp-text-blue-800 sp-text-lg hover:sp-underline"
+      class="!sp-text-[#1a0dab] sp-text-lg hover:sp-underline"
     >
-      {{ title }}
+      {{ title ?? domain }}
     </a>
     <div class="-sp-mt-0.5 sp-flex sp-items-center">
-      <span class="sp-text-sm sp-text-green-800"> {{ domain }}</span>
+      <span class="sp-text-sm sp-text-[#006621]"> {{ domain }}</span>
       <!-- Triangle -->
       <div class="sp-inline-block sp-w-2 sp-overflow-hidden sp-mt-1 sp-ml-0.5">
         <div
-          class="sp-bg-green-700 -sp-rotate-45 sp-transform sp-origin-top-left sp-h-1.5 sp-w-1.5"
+          class="sp-bg-[#006621] -sp-rotate-45 sp-transform sp-origin-top-left sp-h-1.5 sp-w-1.5"
         />
       </div>
     </div>
-    <p class="sp-text-gray-700 sp-text-[13px]">{{ desc }}</p>
+    <p v-if="desc" class="sp-text-[#545454] sp-text-[13px]">{{ desc }}</p>
   </div>
 </template>
 
