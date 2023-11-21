@@ -4,17 +4,14 @@
 
     <info-item title="Heading Count" score="info">
       <div class="sp-w-full sp-divide-gray-200 sp-divide-y">
-        <info-list
-          title="h1"
-          :list="content.headingCount.h1"
-          :length="content.headingCount.h1.length"
-        />
-
-        <!-- <h2 class="py-2 leading-none">h2: {{ content.headingCount.h2 }}</h2>
-        <h3 class="py-2 leading-none">h3: {{ content.headingCount.h3 }}</h3>
-        <h4 class="py-2 leading-none">h4: {{ content.headingCount.h4 }}</h4>
-        <h5 class="py-2 leading-none">h5: {{ content.headingCount.h5 }}</h5>
-        <h5 class="py-2 leading-none">h6: {{ content.headingCount.h6 }}</h5> -->
+        <div v-for="value in headings" :key="value">
+          <heading-list
+            :tag="value"
+            :title="value"
+            :list="content.headingCount[value]"
+            :length="content.headingCount[value].length"
+          />
+        </div>
       </div>
     </info-item>
 
@@ -63,14 +60,19 @@
 import CardHeader from '@/components/card/CardHeader.vue';
 import Card from '@/components/card/Card.vue';
 import InfoItem from '@/components/infolist/InfoItem.vue';
-import InfoList from '@/components/infolist/InfoList.vue';
+import HeadingList from '@/components/infolist/HeadingList.vue';
 import unslugify from '@/services/unslugify';
 
 export default {
+  data() {
+    return {
+      headings: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+    };
+  },
   props: ['content'],
   components: {
     InfoItem,
-    InfoList,
+    HeadingList,
     Card,
     CardHeader,
   },
