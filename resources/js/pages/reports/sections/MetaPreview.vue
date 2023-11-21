@@ -5,7 +5,7 @@
       :image="og_graph.image"
       :desc="og_graph.description"
       :title="og_graph.title"
-      :url="og_graph.url"
+      :domain="domain"
     />
 
     <!-- Twitter -->
@@ -19,7 +19,7 @@
     <linkedin-card
       :title="og_graph.title"
       :image="og_graph.image"
-      :url="og_graph.url"
+      :domain="domain"
     />
 
     <!-- Discord -->

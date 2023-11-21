@@ -9,12 +9,12 @@
     <seo-section :seo="report.seo" />
     <seo-content-section :content="report.content" />
     <meta-section :audit="report.og_graph.audit" />
-    <!-- <meta-preview
+    <meta-preview
       :og_graph="report.og_graph"
       :twitter="report.twitter"
       :json_ld="report.json_ld"
       :domain="this.domain"
-    /> -->
+    />
     <template v-if="report.json_ld.length !== 0">
       <json-ld-schema :json_ld="report.json_ld" />
     </template>
