@@ -27,32 +27,35 @@
     </info-item>
 
     <info-item title="Images without alt" :score="content.no_alt.score">
-      <p v-if="content.no_alt.value === 0">{{ content.no_alt.description }}</p>
-      <div
-        v-if="content.no_alt.value > 0"
-        class="sp-divide-gray-200 sp-divide-y"
-      >
-        <p v-if="item in content.no_alt.value">{{ item }}</p>
+      <div class="sp-divide-gray-200 sp-divide-y">
+        <p>{{ content.no_alt.description }}</p>
+        <ul class="pt-1 mt-1">
+          <li v-for="value in content.no_alt.value" :key="value">
+            {{ value }}
+          </li>
+        </ul>
       </div>
     </info-item>
 
-    <!-- <info-item
-            title="Links without describing text"
-            :score="this.content.link_scores[0].score"
-        >
-            <p>
-                {{ this.content.link_scores[0].description }}
-            </p>
-        </info-item>
+    <template v-if="content.link_scores">
+      <info-item
+        title="Links without describing text"
+        :score="content.link_scores[0].score"
+      >
+        <p>
+          {{ content.link_scores[0].description }}
+        </p>
+      </info-item>
 
-        <info-item
-            title="Total Links found"
-            :score="this.content.link_scores[1].score"
-        >
-            <p>
-                {{ this.content.link_scores[1].description }}
-            </p>
-        </info-item> -->
+      <info-item
+        title="Total Links found"
+        :score="content.link_scores[1].score"
+      >
+        <p>
+          {{ content.link_scores[1].description }}
+        </p>
+      </info-item>
+    </template>
   </card>
 </template>
 
@@ -68,6 +71,9 @@ export default {
     return {
       headings: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
     };
+  },
+  mounted() {
+    console.log(this.content);
   },
   props: ['content'],
   components: {
