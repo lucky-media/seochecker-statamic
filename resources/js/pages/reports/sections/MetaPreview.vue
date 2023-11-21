@@ -2,8 +2,8 @@
   <div class="sp-space-y-4">
     <!-- Google -->
     <google-card
-      :title="og_graph.title"
-      :desc="og_graph.description"
+      :title="seo.title.value"
+      :desc="seo.description.value"
       :domain="this.domain"
     />
 
@@ -55,6 +55,6 @@ export default {
     DiscordCard,
     GoogleCard,
   },
-  props: ['og_graph', 'twitter', 'domain'],
+  props: ['og_graph', 'twitter', 'domain', 'seo'],
 };
 </script>
