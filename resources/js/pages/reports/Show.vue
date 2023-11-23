@@ -13,6 +13,7 @@
       :og_graph="report.og_graph"
       :twitter="report.twitter"
       :json_ld="report.json_ld"
+      :seo="report.seo"
       :domain="this.domain"
     />
     <template v-if="report.json_ld.length !== 0">
