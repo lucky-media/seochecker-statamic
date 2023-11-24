@@ -5,7 +5,7 @@
       :audit="report.lighthouse.audit"
       :full_report="report.lighthouse.report"
     />
-    <list-of-links :data="report.content.links" />
+    <internal-external-links :data="report.content.links" />
     <status-legend />
     <seo-section :seo="report.seo" />
     <seo-content-section :content="report.content" />
@@ -32,7 +32,7 @@ import MetaSection from './sections/MetaSection.vue';
 import JsonLdSchema from './sections/JsonLdSchema.vue';
 import SeoContentSection from './sections/SeoContentSection.vue';
 import StatusLegend from '@/components/ui/StatusLegend.vue';
-import ListOfLinks from './sections/ListOfLinks.vue';
+import InternalExternalLinks from './sections/InternalExternalLinks.vue';
 
 export default {
   components: {
@@ -45,7 +45,7 @@ export default {
     SeoContentSection,
     SeoSection,
     StatusLegend,
-    ListOfLinks,
+    InternalExternalLinks,
   },
   props: ['report', 'domain'],
 };

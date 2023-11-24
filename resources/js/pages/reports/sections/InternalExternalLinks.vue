@@ -1,6 +1,7 @@
 <template>
   <card>
     <card-body>
+      <!-- Header Links -->
       <div class="text-center sp-grid sp-grid-cols-3">
         <div>
           <h5 class="text-lg">Total Links</h5>
@@ -32,39 +33,16 @@
         </div>
       </div>
 
-      <div v-show="active == 'internal'" class="sp-pt-5">
-        <h5 class="text-lg sp-font-semibold">Internal Links</h5>
-        <ul class="sp-divide-y">
-          <li
-            v-for="(value, key) in data[this.active]"
-            :key="key"
-            class="py-2 sp-flex sp-flex-col"
-          >
-            <span class="text-sm sp-font-medium">{{ value.href }}</span>
-            <span class="text-sm pt-0.5">
-              <span class="sp-font-medium">Anchor:</span>
-              {{ value.content }}
-            </span>
-          </li>
-        </ul>
-      </div>
-
-      <div v-show="active == 'external'" class="sp-pt-5">
-        <h5 class="text-lg sp-font-semibold">External Links</h5>
-        <ul class="sp-divide-y">
-          <li
-            v-for="(value, key) in data[this.active]"
-            :key="key"
-            class="py-2 sp-flex sp-flex-col"
-          >
-            <span class="text-sm sp-font-medium">{{ value.href }}</span>
-            <span class="text-sm pt-0.5">
-              <span class="sp-font-medium">Anchor:</span>
-              {{ value.content }}
-            </span>
-          </li>
-        </ul>
-      </div>
+      <list-of-links
+        title="Internal"
+        :active="active == 'internal'"
+        :data="data[active]"
+      />
+      <list-of-links
+        title="External"
+        :active="active == 'external'"
+        :data="data[active]"
+      />
     </card-body>
   </card>
 </template>
@@ -72,25 +50,24 @@
 <script>
 import Card from '@/components/card/Card.vue';
 import CardBody from '@/components/card/CardBody.vue';
+import ListOfLinks from '@/components/infolist/ListOfLinks.vue';
 
 export default {
   components: {
     Card,
     CardBody,
+    ListOfLinks,
   },
   props: ['data'],
   data() {
     return {
-      active: 'internal',
+      active: '',
     };
   },
   methods: {
     showList(param) {
       this.active = this.active === param ? '' : param;
     },
-  },
-  mounted() {
-    console.log(this.data);
   },
 };
 </script>
