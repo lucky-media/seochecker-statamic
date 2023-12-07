@@ -1,14 +1,14 @@
-# SEOPulse - Statamic Addon
+# SEOChecker - Statamic Addon
 
-Welcome to SEOPulse, your professional companion for SEO and Performance insights directly within your Statamic site.
+Welcome to SEOChecker, your professional companion for SEO and Performance insights directly within your Statamic site.
 
 ## Overview
 
-Elevate your website's SEO and user experience with SEOPulse. This Statamic addon streamlines the process of auditing your web pages, delivering a suite of checks to ensure your content and meta elements adhere to best practices and are optimized for visibility and performance.
+Elevate your website's SEO and user experience with SEOChecker. This Statamic addon streamlines the process of auditing your web pages, delivering a suite of checks to ensure your content and meta elements adhere to best practices and are optimized for visibility and performance.
 
 ### Features:
 
-- **SEO Analysis**: Dive deep into your metatags as SEOPulse illuminates actionable SEO insights and recommendations.
+- **SEO Analysis**: Dive deep into your metatags as SEOChecker illuminates actionable SEO insights and recommendations.
   
 - **Content Checks**: Evaluate a range of content features including heading usage, image alt check, mixed content issues, content length checks, and external/internal links.
 
@@ -16,25 +16,25 @@ Elevate your website's SEO and user experience with SEOPulse. This Statamic addo
 
 - **JSON-LD Preview**: Inspect your page's structured data to ensure it's primed for rich results.
 
-- **Lighthouse Reports**: Harness the power of Google Lighthouse for detailed Performance reports accessible directly from the SEOPulse interface.
+- **Lighthouse Reports**: Harness the power of Google Lighthouse for detailed Performance reports accessible directly from the SEOChecker interface.
 
 ## Installation
 
-Get started with SEOPulse by running the following command:
+Get started with SEOChecker by running the following command:
 
 ```bash
-composer require lucky-media/seopulse-statamic
+composer require lucky-media/seochecker-statamic
 ```
 
 ## Performance Considerations
 
-To keep your site speedy, SEOPulse communicates with our API for status updates, and you can run the Job in the background via the Redis queue. This ensures efficient memory usage and minimal impact on your website's performance.
+To keep your site speedy, SEOChecker communicates with our API for status updates, and you can run the Job in the background via the Redis queue. This ensures efficient memory usage and minimal impact on your website's performance.
 
 ## Usage
 
-After installing, navigate to the SEOPulse page within your Statamic Control Panel. Enter your desired URL to initiate the check, and watch as insights populate your dashboard.
+After installing, navigate to the SEOChecker page within your Statamic Control Panel. Enter your desired URL to initiate the check, and watch as insights populate your dashboard.
 
-Remember, SEOPulse relies on our specially designed API to perform checks without burdening your server. As such, it's important to deploy this addon in a production environment to ensure our API can access your live site.
+Remember, SEOChecker relies on our specially designed API to perform checks without burdening your server. As such, it's important to deploy this addon in a production environment to ensure our API can access your live site.
 
 ## Data Retention
 
