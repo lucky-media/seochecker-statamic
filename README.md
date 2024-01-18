@@ -23,7 +23,7 @@ Elevate your website's SEO and user experience with SEOChecker. This Statamic ad
 Get started with SEOChecker by running the following command:
 
 ```bash
-composer require lucky-media/seochecker-statamic
+composer require lucky-media/seopulse-statamic
 ```
 
 ## Performance Considerations
