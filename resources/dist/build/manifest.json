@@ -1,0 +1,19 @@
+{
+  "resources/css/sp-pulse.css": {
+    "file": "assets/sp-pulse-8207a454.css",
+    "isEntry": true,
+    "src": "resources/css/sp-pulse.css"
+  },
+  "resources/js/assets/no-image.png": {
+    "file": "assets/no-image-1998827c.png",
+    "src": "resources/js/assets/no-image.png"
+  },
+  "resources/js/sp-pulse.js": {
+    "assets": [
+      "assets/no-image-1998827c.png"
+    ],
+    "file": "assets/sp-pulse-25114206.js",
+    "isEntry": true,
+    "src": "resources/js/sp-pulse.js"
+  }
+}
