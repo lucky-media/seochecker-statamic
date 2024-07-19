@@ -75,7 +75,7 @@ export default {
         .post(this.create_report_url, { domain: this.domain })
         .then(({ data }) => {
           if (!data.success) {
-              this.errors = data.data.domain;
+              this.errors = data.data.data.domain;
               this.loading = false;
               this.disabled = false;
             return;
