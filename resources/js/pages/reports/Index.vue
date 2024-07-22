@@ -41,22 +41,33 @@
             <tr v-for="(report, index) in reports" :key="index">
               <td class="text-xs whitespace-no-wrap">
                 <div class="flex items-center">
-                  <a :href="report.view_url">
+                  <a v-if="report.status === 'completed'" :href="report.view_url">
                     {{ report.domain }}
                   </a>
+                  <span v-else :class="{ '!sp-text-gray-400 !sp-cursor-not-allowed': report.status === 'pending' }">
+                    {{ report.domain }}
+                  </span>
                 </div>
               </td>
               <td>
-                <span class="bg-green-600 badge-sm">
-                  {{ report.status }}
-                </span>
+                <div class="inline-flex items-center">
+                  <div class="badge-sm" :class="{
+                    'bg-green-600': report.status === 'completed',
+                    'sp-bg-yellow-600': report.status === 'pending'
+                    }">
+                    {{ report.status }}
+                  </div>
+                  <div v-if="report.status === 'pending'">
+                    <loading-graphic inline text="" class="sp-ml-1 !sp-w-3 !sp-h-3" />
+                  </div>
+                </div>
               </td>
               <td>
                   <span>{{ report.created_at }}</span>
               </td>
               <td class="float-right">
                 <dropdown-list>
-                  <dropdown-item text="View" :redirect="report.view_url" />
+                  <dropdown-item v-if="report.status === 'completed'" text="View" :redirect="report.view_url" />
                   <dropdown-item text="Delete" @click="destroy(report.id)" />
                 </dropdown-list>
               </td>

@@ -1,6 +1,6 @@
 {
   "resources/css/sp-pulse.css": {
-    "file": "assets/sp-pulse-8207a454.css",
+    "file": "assets/sp-pulse-17b1d8ec.css",
     "isEntry": true,
     "src": "resources/css/sp-pulse.css"
   },
@@ -12,7 +12,7 @@
     "assets": [
       "assets/no-image-1998827c.png"
     ],
-    "file": "assets/sp-pulse-25114206.js",
+    "file": "assets/sp-pulse-9ef725c7.js",
     "isEntry": true,
     "src": "resources/js/sp-pulse.js"
   }
